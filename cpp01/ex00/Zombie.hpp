@@ -1,3 +1,6 @@
+#ifndef WEAPON_H
+# define WEAPON_H
+
 #include <iostream>
 #include <string>
 
@@ -15,3 +18,4 @@ class Zombie{
 Zombie* newZombie( std::string name );
 void randomChump( std::string name );
 
+#endif
