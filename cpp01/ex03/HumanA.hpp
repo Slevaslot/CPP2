@@ -10,10 +10,7 @@ class HumanA{
 	std::string _name;
 	Weapon *_weapon;
 	public :
-	void	attack()
-	{
-		std::cout << _name << " "<<"attacks with their" << " "<< _weapon->getType() << std::endl;
-	}
+	void	attack();
 	HumanA(std::string _newname, Weapon &weapon);
 };
 
