@@ -1,10 +1,10 @@
-#include "ScavTrap"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name)
 {
-	this->_Attack_damage = 10;
-	this->_Energy_point = 10;
-	this->_Attack_damage = 0;
+	this->_Hit_point = 100;
+	this->_Energy_point = 50;
+	this->_Attack_damage = 20;
 	this->_name = name;
 	std::cout << "constructor called" << std::endl;
 }
