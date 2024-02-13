@@ -5,12 +5,13 @@
 #include <iostream>
 
 class ClapTrap{
-	private:
+	protected:
 		int _Hit_point;
 		int _Energy_point;
 		int _Attack_damage;
 		std::string _name;
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap &t);
 		ClapTrap &operator=(const ClapTrap &t);
