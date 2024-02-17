@@ -11,6 +11,9 @@ $(NAME):	$(SRC)
 			$(CC) -o BrainZ $(SRC)
 
 clean:
+	rm -f $(OBJ)
+
+fclean:
 	rm -f $(OBJ) $(NAME)
 
-re: clean all
+re: clean fclean all

@@ -9,5 +9,4 @@ int main ()
 
 	std::cout << &string << " " << stringPTR << " " << &stringREF << std::endl;
 	std::cout << string << " " << *stringPTR << " " << stringREF << std::endl;
-	// std::cout << string << ", " << (std::string *)*stringPTR << ", " << stringREF << std::endl;
 }

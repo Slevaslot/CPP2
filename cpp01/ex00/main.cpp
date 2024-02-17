@@ -5,7 +5,7 @@ int main ()
 	Zombie zombie2;
 	Zombie *zombie3;
 
-	zombie2.set_zombie("soul");
+	zombie2.set_zombie("Pablo");
 	zombie2.announce();
 	zombie2.announce();
 	zombie2.set_zombie("sheyyy");

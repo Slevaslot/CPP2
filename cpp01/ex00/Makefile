@@ -1,4 +1,4 @@
-SRC = main.cpp Zombie.cpp Zombie.hpp newZombie.cpp randomChump.cpp
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -11,6 +11,9 @@ $(NAME):	$(SRC)
 			$(CC) -o BrainZ $(SRC)
 
 clean:
+	rm -f $(OBJ)
+
+fclean:
 	rm -f $(OBJ) $(NAME)
 
-re: clean all
+re: clean fclean all

@@ -3,14 +3,17 @@ SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
-NAME = BrainZ
+NAME = Sed
 
 all:		$(NAME)
 
 $(NAME):	$(SRC)
-			$(CC) -o BrainZ $(SRC)
+			$(CC) -o Sed $(SRC)
 
 clean:
+	rm -f $(OBJ)
+
+fclean:
 	rm -f $(OBJ) $(NAME)
 
-re: clean all
+re: clean fclean all
