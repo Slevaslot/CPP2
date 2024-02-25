@@ -26,7 +26,7 @@ Cat& Cat::operator=(const Cat &t)
 	return (*this);
 }
 
-void Animal::makeSound() const
+void Cat::makeSound() const
 {
 	if (this->type == "Cat")
 		std::cout << "😺 \033[33mMiaou Miaou\033[0m" << std::endl;
