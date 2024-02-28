@@ -12,7 +12,7 @@ AMateria::AMateria(AMateria &t)
 
 AMateria& AMateria::operator=(const AMateria &t)
 {
-    *this = t;
+    this->_type = t._type;
     return (*this);
 }
 
@@ -34,7 +34,12 @@ AMateria* AMateria::clone() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "the" << this->_type << " is used on " << target._name << std::endl;
+    if (this->_type == "Ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+    else if (this->_type == "Cure")
+        std::cout << "* heals " << target.getName() <<"’s wounds *" << std::endl;
+    else
+        return ;
 }
 
 
