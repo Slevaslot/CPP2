@@ -5,6 +5,11 @@ AMateria::AMateria()
 
 }
 
+AMateria::~AMateria()
+{
+    
+}
+
 AMateria::AMateria(AMateria &t)
 {
     *this = t;

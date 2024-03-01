@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <new>
+#include "Materias/Ice.hpp"
+#include "Materias/Cure.hpp"
 
 class AMateria;
 

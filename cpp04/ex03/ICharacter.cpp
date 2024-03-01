@@ -23,23 +23,26 @@ ICharacter::ICharacter(std::string const & name)
 }
 
 
-std::string const & ICharacter::getName() const
-{
-    return (this->_name);
-}
+// std::string const & ICharacter::getName() const
+// {
+//     return (this->_name);
+// }
 
 void ICharacter::equip(AMateria* m)
 {
-    int i = -1;
-    while(++i)
-    {
-        if (this->_storage[i] == NULL)
-        {
-            this->_storage[i] = m;
-            break ;
-        }
-    }
+    if (_storage[0] == NULL)
+        _storage[0] = m;
+    else if (_storage[1] == NULL)
+        _storage[1] = m;
+    else if (_storage[2] == NULL)
+        _storage[2] = m;
+    else if (_storage[3] == NULL)
+        _storage[3] = m;
+    else
+        std::cout << "No more space in inventory" << std::endl;
+
 }
+
 
 void ICharacter::unequip(int idx)
 {
@@ -49,6 +52,7 @@ void ICharacter::unequip(int idx)
 
 void ICharacter::use(int idx, ICharacter& target)
 {
-    this->_storage[idx]->use(target);
+    if (_storage[idx])
+        _storage[idx]->use(target);
 }
 
