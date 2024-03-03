@@ -15,7 +15,6 @@ class Character : public ICharacter
     AMateria *_storage[4];
     public:
     std::string _name;
-
     Character();
     Character(Character &t);
     Character(std::string const & _name);

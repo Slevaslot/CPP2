@@ -2,14 +2,14 @@
 
 Dog::Dog()
 {
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "🐕 \033[38;5;95mDog constructor called\033[0m" << std::endl;
 	this->type = "Dog";
 	this->dogBrain = new Brain();
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "🐕 \033[38;5;95mDog destructor called\033[0m" << std::endl;
 	delete dogBrain;
 }
 

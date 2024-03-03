@@ -41,7 +41,6 @@ AMateria* AMateria::clone() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "test" << std::endl;
     if (this->_type == "ice")
         std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
     else if (this->_type == "cure")

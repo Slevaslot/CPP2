@@ -1,6 +1,5 @@
 #include "Character.hpp"
 
-
 Character::Character()
 {
     this->_storage[0] = NULL;
@@ -47,7 +46,7 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-     if (!_storage[0])
+    if (!_storage[0])
         _storage[0] = m;
     else if (!_storage[1])
         _storage[1] = m;

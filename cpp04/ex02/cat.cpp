@@ -3,14 +3,14 @@
 
 Cat::Cat()
 {
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "😺 \033[33mCat constructor called\033[0m" << std::endl;
 	this->type = "Cat";
 	this->catBrain = new Brain();
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "😺 \033[33mCat destructor called\033[0m" << std::endl;
 	delete catBrain;
 }
 
