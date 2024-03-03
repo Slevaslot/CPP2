@@ -5,9 +5,9 @@ Ice::Ice()
 	this->_type = "ice";
 }
 
-Ice::Ice(Ice &t)
+Ice::~Ice()
 {
-    *this = t;
+
 }
 
 Ice& Ice::operator=(const Ice &t)
@@ -23,7 +23,17 @@ Ice::Ice(std::string const & name)
     _name = name;
 }
 
-Ice* Ice::clone()
+Ice* Ice::clone() const
 {
    return((Ice *)this);
+}
+
+void Ice::use(ICharacter& target)
+{
+    if (this->_type == "ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+    else if (this->_type == "cure")
+        std::cout << "* heals " << target.getName() <<"’s wounds *" << std::endl;
+    else
+        return ;
 }

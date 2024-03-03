@@ -1,13 +1,14 @@
 #include "Cure.hpp"
 
+
+Cure::~Cure()
+{
+
+}
+
 Cure::Cure()
 {
 	this->_type = "cure";
-}
-
-Cure::Cure(Cure &t)
-{
-    *this = t;
 }
 
 Cure& Cure::operator=(const Cure &t)
@@ -23,7 +24,17 @@ Cure::Cure(std::string const & name)
     _name = name;
 }
 
-Cure* Cure::clone()
+Cure* Cure::clone() const
 {
    return((Cure *)this);
+}
+
+void Cure::use(ICharacter& target)
+{
+    if (this->_type == "ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+    else if (this->_type == "cure")
+        std::cout << "* heals " << target.getName() <<"’s wounds *" << std::endl;
+    else
+        return ;
 }

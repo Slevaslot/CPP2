@@ -1,9 +1,9 @@
-SRC = AMateria.cpp ICharacter.cpp main.cpp NewAMateria.cpp Character.cpp Materias/Cure.cpp Materias/Ice.cpp
+SRC = MateriaSource.cpp IMateriaSource.cpp AMateria.cpp ICharacter.cpp main.cpp Character.cpp Materias/Cure.cpp Materias/Ice.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++ -Wall -Wextra -Werror -std=c++98
-NAME = Animal
+NAME = Game
 
 all:		$(NAME)
 

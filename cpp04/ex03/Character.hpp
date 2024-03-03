@@ -20,7 +20,7 @@ class Character : public ICharacter
     Character(Character &t);
     Character(std::string const & _name);
     Character& operator=(const Character &t);
-    ~Character() {}
+    ~Character();
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);

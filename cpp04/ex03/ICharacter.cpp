@@ -2,23 +2,37 @@
 
 ICharacter::ICharacter()
 {
-
+    this->_storage[0] = NULL;
+    this->_storage[1] = NULL;
+    this->_storage[2] = NULL;
+    this->_storage[3] = NULL;
 }
 
 ICharacter::ICharacter(ICharacter &t)
 {
-    *this = t;
+    _storage[0] = t._storage[0];
+    _storage[1] = t._storage[1];
+    _storage[2] = t._storage[2];
+    _storage[3] = t._storage[3];
+    this->_name = t._name;
 }
 
 ICharacter& ICharacter::operator=(const ICharacter &t)
 {
-    _storage[4] = t._storage[4];
+    _storage[0] = t._storage[0];
+    _storage[1] = t._storage[1];
+    _storage[2] = t._storage[2];
+    _storage[3] = t._storage[3];
     this->_name = t._name;
     return (*this);
 }
 
 ICharacter::ICharacter(std::string const & name)
 {
+    this->_storage[0] = NULL;
+    this->_storage[1] = NULL;
+    this->_storage[2] = NULL;
+    this->_storage[3] = NULL;
     _name = name;
 }
 
@@ -30,17 +44,16 @@ ICharacter::ICharacter(std::string const & name)
 
 void ICharacter::equip(AMateria* m)
 {
-    if (_storage[0] == NULL)
+    if (!_storage[0])
         _storage[0] = m;
-    else if (_storage[1] == NULL)
+    else if (!_storage[1])
         _storage[1] = m;
-    else if (_storage[2] == NULL)
+    else if (!_storage[2])
         _storage[2] = m;
-    else if (_storage[3] == NULL)
+    else if (!_storage[3])
         _storage[3] = m;
     else
         std::cout << "No more space in inventory" << std::endl;
-
 }
 
 

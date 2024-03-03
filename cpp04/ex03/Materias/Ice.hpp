@@ -2,11 +2,8 @@
 #define ICE_HPP
 #include "../AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
-    protected:
-    std::string _type;
-    std::string _name;
     public:
     Ice();
     Ice(std::string const & type);
@@ -14,7 +11,8 @@ class Ice
     Ice(Ice &t);
     ~Ice();
     Ice &operator=(const Ice & t);
-    Ice* clone();
+    Ice* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

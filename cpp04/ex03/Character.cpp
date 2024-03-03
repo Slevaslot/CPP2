@@ -3,26 +3,42 @@
 
 Character::Character()
 {
-
+    this->_storage[0] = NULL;
+    this->_storage[1] = NULL;
+    this->_storage[2] = NULL;
+    this->_storage[3] = NULL;
 }
 
-Character::Character(Character &t)
+Character::~Character()
 {
-    *this = t;
+    if (_storage[0])
+        delete _storage[0];
+    if (_storage[1])
+        delete _storage[1];
+    if (_storage[2])
+        delete _storage[2];
+    if (_storage[3])
+        delete _storage[3];
 }
 
 Character& Character::operator=(const Character &t)
 {
-    _storage[4] = t._storage[4];
+    _storage[0] = t._storage[0];
+    _storage[1] = t._storage[1];
+    _storage[2] = t._storage[2];
+    _storage[3] = t._storage[3];
     this->_name = t._name;
     return (*this);
 }
 
 Character::Character(std::string const & name)
 {
+    this->_storage[0] = NULL;
+    this->_storage[1] = NULL;
+    this->_storage[2] = NULL;
+    this->_storage[3] = NULL;
     _name = name;
 }
-
 
 std::string const & Character::getName() const
 {
@@ -31,15 +47,16 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-    int i = -1;
-    while(++i)
-    {
-        if (this->_storage[i] == NULL)
-        {
-            this->_storage[i] = m;
-            break ;
-        }
-    }
+     if (!_storage[0])
+        _storage[0] = m;
+    else if (!_storage[1])
+        _storage[1] = m;
+    else if (!_storage[2])
+        _storage[2] = m;
+    else if (!_storage[3])
+        _storage[3] = m;
+    else
+        std::cout << "No more space in inventory" << std::endl;
 }
 
 void Character::unequip(int idx)
@@ -50,5 +67,8 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-    this->_storage[idx]->use(target);
+    if (this->_storage[idx])
+        this->_storage[idx]->use(target);
+    else
+        std::cout << "This item has no type" << std::endl;
 }
