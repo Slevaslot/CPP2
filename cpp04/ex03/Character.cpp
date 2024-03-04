@@ -1,31 +1,29 @@
 #include "Character.hpp"
 
+void Character::initStorage()
+{
+    for (int i = 0; i < 4 ; i++)
+		this->_storage[i] = NULL;
+}
+
 Character::Character()
 {
-    this->_storage[0] = NULL;
-    this->_storage[1] = NULL;
-    this->_storage[2] = NULL;
-    this->_storage[3] = NULL;
+   this->initStorage();
 }
 
 Character::~Character()
 {
-    // if (_storage[0])
-    //     delete _storage[0];
-    // if (_storage[1])
-    //     delete _storage[1];
-    // if (_storage[2])
-    //     delete _storage[2];
-    // if (_storage[3])
-    //     delete _storage[3];
+
 }
 
-Character::Character(const Character &t) : ICharacter()
+Character::Character(Character &t) : ICharacter()
 {
+    this->initStorage();
     for (int i = 0; i <= 3 ;i++)
     {
-        this->_storage[i] = t._storage[i];
-        delete t._storage[i];
+        if (t._storage[i])
+            this->_storage[i] = t._storage[i]->clone();
+        // std::cout << "addr des materias :" << &this->_storage[i] << " | " << &t._storage[i] << std::endl;
     }
     this->_name = t._name;
 }

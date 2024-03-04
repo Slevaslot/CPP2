@@ -16,7 +16,7 @@ class Character : public ICharacter
     public:
     std::string _name;
     Character();
-    Character(const Character &t);
+    Character(Character &t);
     Character(std::string const & _name);
     Character& operator=(const Character &t);
     ~Character();
@@ -24,6 +24,7 @@ class Character : public ICharacter
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
+    void initStorage();
 };
 
 #endif

@@ -26,9 +26,9 @@ int main()
 	src->learnMateria(new Ice());
 	Character* me = new Character("me");
 	// Character me1 = *dynamic_cast<Character*>(me);
-	Character me1(*me);
-	const Character me3;
-	const Character me4 = me3;
+	// Character me1(*me);
+	// const	Character me3("test");
+	// Character me4 = me3;
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	Cure test;
@@ -36,6 +36,7 @@ int main()
 	test1 = test.clone();
 	src->learnMateria(test1);
 	me->equip(tmp);
+	Character me1(*me);
 	me->equip(tmp);
 	me->equip(tmp);
 	me1.use(0, *me);
