@@ -28,10 +28,7 @@ wrongAnimal& wrongAnimal::operator=(const wrongAnimal &t)
 
 void wrongAnimal::makeSound() const
 {
-	if (this->type == "wrongCat")
-		std::cout << "🙀 Miaourrr Miaourrrrriieqw 🐙" << std::endl;
-	else
-		std::cout << "uknown sound" << std::endl;
+	std::cout << "uknown sound" << std::endl;
 }
 
 

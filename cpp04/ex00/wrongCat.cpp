@@ -21,3 +21,9 @@ wrongCat& wrongCat::operator=(const wrongCat &t)
 	this->type = t.type;
 	return (*this);
 }
+
+void wrongCat::makeSound() const
+{
+	if (this->type == "wrongCat")
+		std::cout << "🙀 Miaourrr Miaourrrrriieqw 🐙" << std::endl;
+}

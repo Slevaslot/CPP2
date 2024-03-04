@@ -2,12 +2,12 @@
 
 Brain::Brain()
 {
-
+	std::cout << "Constructor brain called" << std::endl;
 }
 
 Brain::~Brain()
 {
-
+	std::cout << "Destructor brain called" << std::endl;
 }
 
 Brain::	Brain(Brain const &t)
