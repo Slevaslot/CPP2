@@ -12,13 +12,13 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 
-        // delete _matstorage[0];
+        delete _matstorage[0];
 
-        // delete _matstorage[1];
+        delete _matstorage[1];
 
-        // delete _matstorage[2];
+        delete _matstorage[2];
 
-        // delete _matstorage[3];
+        delete _matstorage[3];
 }
 
 MateriaSource::MateriaSource(MateriaSource &t) : IMateriaSource(t)

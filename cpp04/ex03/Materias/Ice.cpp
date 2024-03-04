@@ -10,6 +10,12 @@ Ice::~Ice()
 
 }
 
+Ice::Ice(Ice &t) : AMateria()
+{
+    this->_name = t._name;
+    this->_type = t._type;
+}
+
 Ice& Ice::operator=(const Ice &t)
 {
     this->_type = t._type;
@@ -25,15 +31,15 @@ Ice::Ice(std::string const & name)
 
 Ice* Ice::clone() const
 {
-   return((Ice *)this);
+    Ice *tmp = new Ice();
+    tmp->_name = this->_name;
+    tmp->_type = this->_type;
+    return(tmp);
 }
 
 void Ice::use(ICharacter& target)
 {
     if (this->_type == "ice")
-        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
-    else if (this->_type == "cure")
-        std::cout << "* heals " << target.getName() <<"’s wounds *" << std::endl;
-    else
-        return ;
+        std::cout << "* shoots an \e[0;36mice bolt\e[0m at " << target.getName() << "*" << std::endl;
+    return ;
 }

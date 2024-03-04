@@ -16,7 +16,7 @@ class Character : public ICharacter
     public:
     std::string _name;
     Character();
-    Character(Character &t);
+    Character(const Character &t);
     Character(std::string const & _name);
     Character& operator=(const Character &t);
     ~Character();

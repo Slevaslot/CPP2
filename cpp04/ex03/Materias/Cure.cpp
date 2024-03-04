@@ -11,6 +11,12 @@ Cure::Cure()
 	this->_type = "cure";
 }
 
+Cure::Cure(Cure &t) : AMateria()
+{
+    this->_name = t._name;
+    this->_type = t._type;
+}
+
 Cure& Cure::operator=(const Cure &t)
 {
     this->_type = t._type;
@@ -26,15 +32,16 @@ Cure::Cure(std::string const & name)
 
 Cure* Cure::clone() const
 {
-   return((Cure *)this);
+    Cure *tmp = new Cure();
+    tmp->_name = this->_name;
+    tmp->_type = this->_type;
+    return(tmp);
 }
 
 void Cure::use(ICharacter& target)
 {
-    if (this->_type == "ice")
-        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
-    else if (this->_type == "cure")
-        std::cout << "* heals " << target.getName() <<"’s wounds *" << std::endl;
+    if (this->_type == "cure")
+        std::cout << "* \e[0;32mheals \e[0m" << target.getName() <<"’s wounds *" << std::endl;
     else
         return ;
 }

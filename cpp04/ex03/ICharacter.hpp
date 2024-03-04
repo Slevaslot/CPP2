@@ -11,8 +11,8 @@ class ICharacter
 {
     protected:
     AMateria *_storage[4];
-    public:
     std::string _name;
+    public:
 
     ICharacter();
     ICharacter(ICharacter &t);

@@ -65,7 +65,12 @@ void ICharacter::unequip(int idx)
 
 void ICharacter::use(int idx, ICharacter& target)
 {
-    if (_storage[idx])
-        _storage[idx]->use(target);
+    if (idx >= 0 && idx <= 3)
+    {
+        if (_storage[idx])
+            _storage[idx]->use(target);
+    }
+    else
+        std::cout << "index for invotory out of range" << std::endl;
 }
 
