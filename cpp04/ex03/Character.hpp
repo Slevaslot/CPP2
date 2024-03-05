@@ -25,6 +25,7 @@ class Character : public ICharacter
     void unequip(int idx);
     void use(int idx, ICharacter& target);
     void initStorage();
+    void delete_aftercpy();
 };
 
 #endif

@@ -59,6 +59,7 @@ int main()
 	me->use(1, *bob);
 	me->equip(tmp);
 	me->equip(tmp);
+	me1.delete_aftercpy();
 	delete bob;
 	delete me;
 	delete src;

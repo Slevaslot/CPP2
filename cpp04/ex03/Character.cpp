@@ -1,5 +1,15 @@
 #include "Character.hpp"
 
+
+void    Character::delete_aftercpy()
+{
+    for(int i = 0; i <= 3; i++)
+    {
+        if (this->_storage[i])
+            delete this->_storage[i];
+    }
+}
+
 void Character::initStorage()
 {
     for (int i = 0; i < 4 ; i++)
@@ -30,12 +40,12 @@ Character::Character(Character &t) : ICharacter()
 
 Character& Character::operator=(const Character &t)
 {
-    std::cout << "ARAHHHH" << std::endl;
-    delete this;
+    // std::cout << "ARAHHHH" << std::endl;
+    // delete this;
     Character *tmp = new Character;
     for (int i = 0; i <= 3 ;i++)
     {
-        std::cout << "STORAGE I" << tmp->_storage[i] << std::endl;
+        // std::cout << "STORAGE I" << tmp->_storage[i] << std::endl;
         tmp->_storage[i] = t._storage[i];
         delete t._storage[i];
     }
@@ -82,10 +92,19 @@ void Character::use(int idx, ICharacter& target)
     if (idx >= 0 && idx <= 3)
     {
         if (this->_storage[idx])
+        {
+            std::cout << "[" << idx << "] ";
             this->_storage[idx]->use(target);
+        }
         else
+        {
+            std::cout << "[" << idx << "] ";
             std::cout << "This item has no type" << std::endl;
+        }
     }
     else
+    {
+        std::cout << "[" << idx << "] ";
         std::cout << "Index for storage is out of range" << std::endl;
+    }
 }
